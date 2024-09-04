@@ -1,30 +1,32 @@
 body{
     font-family: 'Roboto', sans-serif !important;
-    background: #121212 !important;
+    background: radial-gradient(circle, #333, #121212) !important;
     color: #e0e0e0 !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: hidden;
 }
 
 nav{
-    background-color: #1f1f1f !important;
     padding: 10px !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    height: 90px;
 }
 
 nav ul{
     list-style: none !important;
     display: flex !important;
-    justify-content: space-around !important;
+    justify-content: flex-end;
     padding: 0 !important;
+    gap: 20px;
 }
 
 nav ul li{
-    margin: 23px 15px 2px !important;
+    margin: 25px 15px !important;
 }
 
 nav ul li a{
-    color: #0ff !important;
+    color: #a1ff14 !important;
     text-decoration: none !important;
     font-weight: bold !important;
     transition: all 0.3s ease !important;
@@ -32,21 +34,28 @@ nav ul li a{
 
 nav ul li a:hover{
     color: #fff !important;
-    text-shadow: 0 0 8px #0ff !important;
+    text-shadow: 0 0 8px #a1ff14 !important;
+}
+
+img{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    height: 75px !important;
+    width: 75px !important;
 }
 
 header{
     padding: 60px 20px !important;
     text-align: center !important;
-    background: radial-gradient(circle, #333, #121212) !important;
     position: relative !important;
     overflow: hidden !important;
 }
 
 header h1{
     font-size: 3rem !important;
-    color: #0ff !important;
-    text-shadow: 0 0 15px #0ff !important;
+    color: #a1ff14 !important;
+    text-shadow: 0 0 15px black !important;
     margin-bottom: 10px !important;
 }
 
@@ -56,7 +65,7 @@ header p{
 }
 
 button{
-    background-color: #0ff !important;
+    background-color: #a1ff14 !important;
     color: #121212 !important;
     border: none !important;
     padding: 10px 20px !important;
@@ -67,9 +76,9 @@ button{
 }
 
 button:hover{
-    background-color: #00f0f0 !important;
+    background-color: #a1ff14 !important;
     color: #fff !important;
-    box-shadow: 0 0 10px #00f0f0 !important;
+    box-shadow: 0 0 10px #a1ff14 !important;
 }
 
 canvas#particles{
