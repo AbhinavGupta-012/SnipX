@@ -1,0 +1,80 @@
+body{
+    font-family: 'Roboto', sans-serif !important;
+    background: #121212 !important;
+    color: #e0e0e0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+nav{
+    background-color: #1f1f1f !important;
+    padding: 10px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+nav ul{
+    list-style: none !important;
+    display: flex !important;
+    justify-content: space-around !important;
+    padding: 0 !important;
+}
+
+nav ul li{
+    margin: 23px 15px 2px !important;
+}
+
+nav ul li a{
+    color: #0ff !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+}
+
+nav ul li a:hover{
+    color: #fff !important;
+    text-shadow: 0 0 8px #0ff !important;
+}
+
+header{
+    padding: 60px 20px !important;
+    text-align: center !important;
+    background: radial-gradient(circle, #333, #121212) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+header h1{
+    font-size: 3rem !important;
+    color: #0ff !important;
+    text-shadow: 0 0 15px #0ff !important;
+    margin-bottom: 10px !important;
+}
+
+header p{
+    font-size: 1.2rem !important;
+    color: #ccc !important;
+}
+
+button{
+    background-color: #0ff !important;
+    color: #121212 !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    border-radius: 5px !important;
+}
+
+button:hover{
+    background-color: #00f0f0 !important;
+    color: #fff !important;
+    box-shadow: 0 0 10px #00f0f0 !important;
+}
+
+canvas#particles{
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    pointer-events: none !important;
+}
