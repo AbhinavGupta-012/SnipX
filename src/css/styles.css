@@ -4,7 +4,7 @@ body{
     color: #e0e0e0 !important;
     margin: 0 !important;
     padding: 0 !important;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 nav{
@@ -85,5 +85,11 @@ canvas#particles{
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
+    z-index: -1;
     pointer-events: none !important;
+}
+
+footer{
+    background-color: #121212;
+    padding-bottom: 30px;
 }
