@@ -143,7 +143,7 @@ form.sign-in-form {
 
 .btn {
   width: 150px;
-  background-color: #a1ff14;
+  background-color: #a1ff14 !important;
   border: none;
   outline: none;
   height: 49px;
@@ -157,7 +157,8 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  background-color: #a1ff14;
+  background-color: #101110 !important;
+  color: rgb(237, 229, 229) !important;
 }
 .panels-container {
   position: absolute;
