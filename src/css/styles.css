@@ -67,7 +67,7 @@ header p{
     color: #ccc !important;
 }
 
-button{
+.Btn-Container{
     background-color: #a1ff14 !important;
     color: #121212 !important;
     border: none !important;
@@ -78,7 +78,7 @@ button{
     border-radius: 5px !important;
 }
 
-button:hover{
+.Btn-Container:hover{
     background-color: #a1ff14 !important;
     color: #fff !important;
     box-shadow: 0 0 10px #a1ff14 !important;
