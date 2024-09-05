@@ -9,7 +9,6 @@ body{
 
 nav{
     padding: 10px !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
     height: 90px;
 }
 
@@ -37,12 +36,12 @@ nav ul li a:hover{
     text-shadow: 0 0 8px #a1ff14 !important;
 }
 
-img{
+.img{
     position: absolute;
     top: 1%;
     left: 1%;
     height: 75px !important;
-    width: 75px !important;
+    width: 10px !important;
 }
 
 header{
