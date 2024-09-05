@@ -445,3 +445,68 @@ form.sign-in-form {
   text-decoration: none;
   cursor: pointer;
 } 
+#loginPopUp {
+  width: 800px; /* Default width for larger screens */
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  background-color: #262424;
+  z-index: 1001;
+  border-radius: 20px;
+  padding: 20px;
+  display: none; /* Hidden by default */
+  overflow-y: auto; /* Scroll for smaller screens if necessary */
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  #loginPopUp {
+    width: 70%; /* Adjust width for medium screens */
+    top: 10%; /* Maintain vertical position */
+  }
+}
+
+@media (max-width: 768px) {
+  #loginPopUp {
+    width: 90%; /* Full width for smaller screens */
+    top: 15%; /* Adjusted vertical position */
+    height: auto; /* Let it expand for content */
+    max-height: 80vh; /* Limit height to prevent overflow */
+    padding: 10px; /* Reduced padding */
+  }
+}
+
+@media (max-width: 480px) {
+  #loginPopUp {
+    width: 95%; /* Almost full width for very small screens */
+    top: 10%; /* Keep it visible on small screens */
+    height: auto; /* Expand height for small screens */
+    max-height: 80vh; /* Prevent overflow */
+    padding: 10px; /* Reduced padding */
+  }
+
+  /* Smaller close button for small screens */
+  .close-btn {
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+  }
+}
