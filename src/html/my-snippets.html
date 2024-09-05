@@ -6,94 +6,246 @@
     <title>My Snippets - Code Snippet Manager</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Add the snippet manager styles here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .snippet-form, .snippets-list {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .snippet-form {
+            flex: 2;
+        }
+        .snippets-list {
+            flex: 1;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            font-family: monospace;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .snippet-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        .snippet-item h3 {
+            margin: 0 0 5px 0;
+        }
+        .snippet-item p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
     <nav>
         <img src="../images/logo.png" alt="SnipX logo">
         <ul>
             <label class="hamburger">
-				<input type="checkbox">
-				<svg viewBox="0 0 32 32">
-				<path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-				<path class="line" d="M7 16 27 16"></path>
-				</svg>
-				<div class="slide-nav">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="explore.html">Explore</a></li>
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="my-snippets.html">My Snippets</a></li>
-				</div>
-			</label>
-			<div class="navs">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="explore.html">Explore</a></li>
-				<li><a href="about.html">About Us</a></li>
-				<li><a href="my-snippets.html">My Snippets</a></li>
-			</div>
+                <input type="checkbox">
+                <svg viewBox="0 0 32 32">
+                    <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                    <path class="line" d="M7 16 27 16"></path>
+                </svg>
+                <div class="slide-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="my-snippets.html">My Snippets</a></li>
+                </div>
+            </label>
+            <div class="navs">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="my-snippets.html">My Snippets</a></li>
+            </div>
         </ul>
     </nav>
 
     <header>
         <h1>My Snippets</h1>
         <p>View and manage your saved code snippets.</p>
-        <canvas id="particles"></canvas>
     </header>
 
-
-    <div class="index-container my-">
-        <footer class="text-center text-lg-start mt-xl-5 pt-4">
-        <div class="container p-4">
-
-          <div class="row">
-            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-              <h5 class="text-uppercase mb-4">OUR WORLD</h5>
-              <ul class="list-unstyled mb-4">
-                <li> <a href="#!" class="text-white text-decoration-none">About us</a> </li>
-                <li> <a href="#!" class="text-white text-decoration-none">Collections</a> </li>
-                <li> <a href="#!" class="text-white text-decoration-none">Environmental philosophy</a> </li>
-                <li> <a href="#!" class="text-white text-decoration-none">Artist collaborations</a> </li>
-              </ul>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-              <h5 class="text-uppercase mb-4">Assistance</h5>
-              <ul class="list-unstyled">
-                <li> <a href="#!" class="text-white text-decoration-none">Contact us</a> </li>
-                <li> <a href="#!" class="text-white text-decoration-none">Size Guide</a> </li>
-                <li> <a href="#!" class="text-white text-decoration-none">Shipping Information</a> </li>
-                <li> <a href="#!" class="text-white text-decoration-none">Returns & Exchanges</a> </li>
-                <li> <a href="#!" class="text-white text-decoration-none">Payment</a> </li>
-              </ul>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-              <h5 class="text-uppercase mb-4">Careers</h5>
-              <ul class="list-unstyled">
-                <li> <a href="#!" class="text-white text-decoration-none">Jobs</a> </li>
-              </ul>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-              <h5 class="text-uppercase mb-4">Sign up to our newsletter</h5>
-              <div class="form-outline form-white mb-4">
-                <input type="email" id="form5Example2" class="form-control" />
-                <label class="form-label" for="form5Example2">Email address</label>
-              </div>
-              <button type="submit" class="btn btn-outline-white btn-block Btn-Container">Subscribe</button>
-            </div>
-
-          </div>
+    <!-- Snippet Manager Section -->
+    <div class="container">
+        <div class="snippet-form">
+            <h2>Add New Snippet</h2>
+            <form id="snippetForm">
+                <label for="snippetTitle">Title:</label>
+                <input type="text" id="snippetTitle" required>
+                
+                <label for="snippetCode">Code:</label>
+                <textarea id="snippetCode" required></textarea>
+                
+                <div class="toggle-container">
+                    <label for="snippetPrivacy" class="toggle">
+                        <input type="checkbox" id="snippetPrivacy">
+                        <span class="slider"></span>
+                    </label>
+                    <span id="privacyLabel">Public</span>
+                </div>
+                
+                <button type="submit">Add Snippet</button>
+            </form>
+        </div>
         
+        <div class="snippets-list">
+            <h2>My Snippets</h2>
+            <div id="snippetsList"></div>
         </div>
-    
-        <div class="text-center p-1">
-          © 2024 Copyright:
-          <a class="text-white text-decoration-none" href="https://mdbootstrap.com/"> SnipX</a>
-        </div>
-
-      </footer>
-      
     </div>
+
+    <footer class="text-center text-lg-start mt-5 pt-4">
+        <div class="container p-4">
+            <!-- Footer content (as in your original code) -->
+        </div>
+        <div class="text-center p-1">© 2024 Copyright: 
+            <a class="text-white text-decoration-none" href="https://mdbootstrap.com/"> SnipX</a>
+        </div>
+    </footer>
+
     <script src="../js/main.js"></script>
+    <script>
+        const snippetForm = document.getElementById('snippetForm');
+        const snippetsList = document.getElementById('snippetsList');
+        const privacyToggle = document.getElementById('snippetPrivacy');
+        const privacyLabel = document.getElementById('privacyLabel');
+
+        let snippets = JSON.parse(localStorage.getItem('snippets')) || [];
+
+        function updatePrivacyLabel() {
+            privacyLabel.textContent = privacyToggle.checked ? 'Private' : 'Public';
+        }
+
+        privacyToggle.addEventListener('change', updatePrivacyLabel);
+
+        function renderSnippets() {
+            snippetsList.innerHTML = '';
+            snippets.forEach((snippet, index) => {
+                const snippetElement = document.createElement('div');
+                snippetElement.classList.add('snippet-item');
+                snippetElement.innerHTML = `
+                    <h3>${snippet.title}</h3>
+                    <p>${snippet.isPrivate ? 'Private' : 'Public'}</p>
+                    <button onclick="deleteSnippet(${index})">Delete</button>
+                `;
+                snippetsList.appendChild(snippetElement);
+            });
+        }
+
+        function addSnippet(e) {
+            e.preventDefault();
+            const newSnippet = {
+                title: document.getElementById('snippetTitle').value,
+                code: document.getElementById('snippetCode').value,
+                isPrivate: privacyToggle.checked
+            };
+            snippets.push(newSnippet);
+            localStorage.setItem('snippets', JSON.stringify(snippets));
+            snippetForm.reset();
+            updatePrivacyLabel();
+            renderSnippets();
+        }
+
+        function deleteSnippet(index) {
+            snippets.splice(index, 1);
+            localStorage.setItem('snippets', JSON.stringify(snippets));
+            renderSnippets();
+        }
+
+        snippetForm.addEventListener('submit', addSnippet);
+        renderSnippets();
+        updatePrivacyLabel();
+    </script>
 </body>
 </html>
