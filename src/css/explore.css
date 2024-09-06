@@ -1,0 +1,82 @@
+.snippets-section {
+    padding: 40px 20px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.snippets-tabs {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    border-bottom: 2px solid #333;
+}
+
+.snippets-tabs .tab-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #aaaaaa;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.snippets-tabs .tab-item.active {
+    color: #ffffff;
+    border-bottom: 3px solid #0ab5ff;
+}
+
+.snippets-tabs .tab-item:hover {
+    color: #ffffff;
+}
+
+.snippets-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.tab-content {
+    display: none;
+    width: 100%;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.template-item {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.template-item:hover {
+    transform: scale(1.05);
+}
+
+.template-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #0ab5ff;
+}
+
+.template-item p {
+    margin: 15px;
+    font-size: 1rem;
+    text-align: center;
+    color: #cccccc;
+}
