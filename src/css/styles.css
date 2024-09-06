@@ -53,10 +53,17 @@ img{
     width: 75px !important;
 }
 
-header{
+.header{
     top: -100px;
     z-index: 0;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header{
+    z-index: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
