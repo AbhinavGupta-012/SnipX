@@ -58,7 +58,7 @@
                     <span id="privacyLabel">Public</span>
                 </div>
                 
-                <button type="submit">Add Snippet</button>
+                <button class="snip-btn" type="submit">Add Snippet</button>
             </form>
         </div>
         
@@ -142,7 +142,7 @@
                     <h3>${snippet.title}</h3>
                     <p>${snippet.isPrivate ? 'Private' : 'Public'}</p>
                     <br>
-                    <button onclick="deleteSnippet(${index})">Delete</button>
+                    <button class="snip-btn" onclick="deleteSnippet(${index})">Delete</button>
                 `;
                 snippetsList.appendChild(snippetElement);
             });

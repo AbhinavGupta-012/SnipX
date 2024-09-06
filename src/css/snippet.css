@@ -34,11 +34,11 @@ h2 {
     color: #a1ff14; 
 }
 
-    label {
-        display: block;
-        margin-bottom: 5px;
-        color: #b4aca7;
-    }
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #b4aca7;
+}
 
 input[type="text"], textarea {
     width: 100%;
@@ -56,18 +56,18 @@ textarea {
     font-family: monospace;
 }
 
-button {
+.snip-btn {
     background-color: #a1ff14;
     color: #1a1c1f;
     padding: 10px 15px;
     border: none;
-    border-radius: 30px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-button:hover {
+.snip-btn:hover {
     background-color: #8fcf13; 
 }
 
