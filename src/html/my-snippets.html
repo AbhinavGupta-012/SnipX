@@ -145,6 +145,7 @@
                 snippetElement.innerHTML = `
                     <h3>${snippet.title}</h3>
                     <p>${snippet.isPrivate ? 'Private' : 'Public'}</p>
+                    <br>
                     <button onclick="deleteSnippet(${index})">Delete</button>
                 `;
                 snippetsList.appendChild(snippetElement);

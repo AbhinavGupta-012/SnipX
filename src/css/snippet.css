@@ -141,6 +141,10 @@ input:checked + .slider:before {
     color: #aaa;
 }
 
+#privacyLabel{
+    margin-left: 10px;
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
