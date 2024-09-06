@@ -6,6 +6,10 @@ body {
     background-color: #f4f4f4;
 }
 
+.snips-container{
+    height: 100vh;
+}
+
 .snippet-container {
     display: flex;
     gap: 20px;

@@ -17,6 +17,7 @@ nav{
 }
 
 .navs{
+    z-index: 1000;
     display: flex;
 }
 
@@ -53,21 +54,21 @@ img{
 }
 
 header{
-    padding: 60px 20px !important;
-    text-align: center !important;
-    position: relative !important;
-    overflow: hidden !important;
+    top: -100px;
+    z-index: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 header h1{
-    font-size: 3rem !important;
     color: #a1ff14 !important;
     text-shadow: 0 0 15px black !important;
     margin-bottom: 10px !important;
 }
 
 header p{
-    font-size: 1.2rem !important;
     color: #ccc !important;
 }
 
@@ -80,6 +81,7 @@ header p{
     cursor: pointer !important;
     transition: all 0.3s ease !important;
     border-radius: 5px !important;
+    z-index: 1001;
 }
 
 .Btn-Container:hover{

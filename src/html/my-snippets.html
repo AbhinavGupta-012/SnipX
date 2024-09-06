@@ -34,37 +34,39 @@
 			</div>
         </ul>
     </nav>
-
+    <canvas id="particles"></canvas>
     <header>
         <h1>My Snippets</h1>
         <p>View and manage your saved code snippets.</p>
     </header>
 
-    <div class="snippet-container">
-        <div class="snippet-form">
-            <h2>Add New Snippet</h2>
-            <form id="snippetForm">
-                <label for="snippetTitle">Title:</label>
-                <input type="text" id="snippetTitle" required>
-                
-                <label for="snippetCode">Code:</label>
-                <textarea id="snippetCode" required></textarea>
-                
-                <div class="toggle-container">
-                    <label for="snippetPrivacy" class="toggle">
-                        <input type="checkbox" id="snippetPrivacy">
-                        <span class="slider"></span>
-                    </label>
-                    <span id="privacyLabel">Public</span>
-                </div>
-                
-                <button class="snip-btn" type="submit">Add Snippet</button>
-            </form>
-        </div>
-        
-        <div class="snippets-list">
-            <h2>My Snippets</h2>
-            <div id="snippetsList"></div>
+    <div class="snips-container">
+        <div class="snippet-container">
+            <div class="snippet-form">
+                <h2>Add New Snippet</h2>
+                <form id="snippetForm">
+                    <label for="snippetTitle">Title:</label>
+                    <input type="text" id="snippetTitle" required>
+                    
+                    <label for="snippetCode">Code:</label>
+                    <textarea id="snippetCode" required></textarea>
+                    
+                    <div class="toggle-container">
+                        <label for="snippetPrivacy" class="toggle">
+                            <input type="checkbox" id="snippetPrivacy">
+                            <span class="slider"></span>
+                        </label>
+                        <span id="privacyLabel">Public</span>
+                    </div>
+                    
+                    <button class="snip-btn" type="submit">Add Snippet</button>
+                </form>
+            </div>
+            
+            <div class="snippets-list">
+                <h2>My Snippets</h2>
+                <div id="snippetsList"></div>
+            </div>
         </div>
     </div>
 
