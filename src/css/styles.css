@@ -172,3 +172,117 @@ footer{
         z-index: 1000;
     }
 }
+
+.newsletter {
+    background: transparent;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.newsletter h2 {
+    color: #a1ff14;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.newsletter p {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.newsletter-form button {
+    background-color: #a1ff14;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.newsletter-form button:hover {
+    background-color: #a1ff14;
+    color: #fff;
+    box-shadow: 0 0 10px #a1ff14;
+}
+
+.faq-section {
+    background: transparent;
+    padding: 50px 20px;
+    margin-top: 30px;
+    color: #fff;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #a1ff14;
+    margin-bottom: 30px;
+    text-shadow: 0 0 8px #a1ff14;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #121212;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.faq-question {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #2b2b2b;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: #a1ff14;
+}
+
+.faq-answer {
+    background-color: #1f1f1f;
+    padding: 20px;
+    display: none;
+    font-size: 1rem;
+    border-top: 1px solid #333;
+    color: #e0e0e0;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
