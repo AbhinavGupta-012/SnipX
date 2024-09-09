@@ -1,8 +1,6 @@
-// Ensure GSAP and ScrollTrigger are loaded
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
   
-    // Example animation for the header
     gsap.from("header h1", {
       opacity: 0,
       y: -50,
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ease: "power2.out"
     });
   
-    // Animate the FAQ items
     gsap.from(".faq-item", {
       opacity: 0,
       y: 30,
@@ -32,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
-    // Animate the newsletter form
     gsap.from(".newsletter-form", {
       opacity: 0,
       y: 50,
@@ -45,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
-    // Example of animating the pop-up
     gsap.from("#loginPopUp", {
       opacity: 0,
       y: 50,
