@@ -121,58 +121,6 @@
     </div>
 
     <script src="../js/main.js"></script>
-    <script>
-        const snippetForm = document.getElementById('snippetForm');
-        const snippetsList = document.getElementById('snippetsList');
-        const privacyToggle = document.getElementById('snippetPrivacy');
-        const privacyLabel = document.getElementById('privacyLabel');
-
-        let snippets = JSON.parse(localStorage.getItem('snippets')) || [];
-
-        function updatePrivacyLabel() {
-            privacyLabel.textContent = privacyToggle.checked ? 'Private' : 'Public';
-        }
-
-        privacyToggle.addEventListener('change', updatePrivacyLabel);
-
-        function renderSnippets() {
-            snippetsList.innerHTML = '';
-            snippets.forEach((snippet, index) => {
-                const snippetElement = document.createElement('div');
-                snippetElement.classList.add('snippet-item');
-                snippetElement.innerHTML = `
-                    <h3>${snippet.title}</h3>
-                    <p>${snippet.isPrivate ? 'Private' : 'Public'}</p>
-                    <br>
-                    <button class="snip-btn" onclick="deleteSnippet(${index})">Delete</button>
-                `;
-                snippetsList.appendChild(snippetElement);
-            });
-        }
-
-        function addSnippet(e) {
-            e.preventDefault();
-            const newSnippet = {
-                title: document.getElementById('snippetTitle').value,
-                code: document.getElementById('snippetCode').value,
-                isPrivate: privacyToggle.checked
-            };
-            snippets.push(newSnippet);
-            localStorage.setItem('snippets', JSON.stringify(snippets));
-            snippetForm.reset();
-            updatePrivacyLabel();
-            renderSnippets();
-        }
-
-        function deleteSnippet(index) {
-            snippets.splice(index, 1);
-            localStorage.setItem('snippets', JSON.stringify(snippets));
-            renderSnippets();
-        }
-
-        snippetForm.addEventListener('submit', addSnippet);
-        renderSnippets();
-        updatePrivacyLabel();
-    </script>
+	<script type="module" src="../js/snippet.js"></script>
 </body>
 </html>
