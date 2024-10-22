@@ -1,10 +1,3 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-}
 
 .snips-container{
     height: 100vh;
@@ -153,4 +146,47 @@ input:checked + .slider:before {
     .container {
         flex-direction: column;
     }
+}
+
+.snippet-card {
+    background-color: #ffffff;
+}
+
+.snippet-card-dark {
+    background-color: #343a40;
+}
+
+.snippet-card pre {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.snippet-card-dark pre {
+    background-color: #495057;
+}
+
+.snippet-card-footer {
+    background-color: #e9ecef;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.snippet-card-footer-dark {
+    background-color: #495057;
+}
+
+.delete-btn{
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    right: 0px;
 }

@@ -36,3 +36,32 @@ function animate() {
 }
 
 animate();
+
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+function toggleDarkMode() {
+    body.classList.toggle('dark-mode');
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+    updateDarkModeButton(isDarkMode);
+}
+
+function updateDarkModeButton(isDarkMode) {
+    const icon = darkModeToggle.querySelector('i');
+    icon.classList.remove('fa-moon', 'fa-sun');
+    icon.classList.add(isDarkMode ? 'fa-sun' : 'fa-moon');
+}
+
+const savedDarkMode = localStorage.getItem('darkMode');
+if (savedDarkMode === 'true') {
+    body.classList.add('dark-mode');
+    updateDarkModeButton(true);
+}
+
+darkModeToggle.addEventListener('click', toggleDarkMode);
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
