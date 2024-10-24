@@ -46,9 +46,28 @@
     100% { transform: rotate(360deg); }
 }
 
+/* Canvas styling */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+#particles.visible {
+    opacity: 1;
+}
+
 /* Hide initial content */
 #app {
     display: none;
+    position: relative;
+    z-index: 2;
 }
 
 /* Show content when loaded */
@@ -108,14 +127,6 @@ body {
     transition: all 0.3s ease;
     border-radius: 10px;
     margin-left: 2px;
-}
-
-canvas#particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    pointer-events: none;
 }
 
 .header{

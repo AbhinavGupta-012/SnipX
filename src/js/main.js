@@ -1,54 +1,22 @@
-window.addEventListener('load', () => {
-    const preloader = document.querySelector('.preloader');
-    const preloaderText = document.querySelector('.preloader-text');
-    const app = document.querySelector('#app');
-    
-    const loadingMessages = [
-        'Loading SnipX...',
-        'Preparing your workspace...',
-        'Almost there...',
-        'Getting things ready...'
-    ];
-    
-    let messageIndex = 0;
-    const loadingTime = 2500; // 4.5 seconds
-    const messageChangeInterval = loadingTime / loadingMessages.length;
-    
-    // Change messages periodically
-    const messageTimer = setInterval(() => {
-        messageIndex = (messageIndex + 1) % loadingMessages.length;
-        preloaderText.style.opacity = '0';
-        
-        setTimeout(() => {
-            preloaderText.textContent = loadingMessages[messageIndex];
-            preloaderText.style.opacity = '1';
-        }, 200);
-    }, messageChangeInterval);
-    
-    // Hide preloader and show content after loading time
-    setTimeout(() => {
-        clearInterval(messageTimer);
-        preloader.style.display = 'none';
-        app.classList.add('visible');
-    }, loadingTime);
-});
-
+// Particle system setup
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 const particles = [];
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function initParticles() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-for (let i = 0; i < 100; i++) {
-    particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 3,
-        color: `rgba(0, 255, 255, ${Math.random()})`,
-        dx: (Math.random() - 0.5) * 2,
-        dy: (Math.random() - 0.5) * 2,
-    });
+    for (let i = 0; i < 100; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 3,
+            color: `rgba(0, 255, 255, ${Math.random()})`,
+            dx: (Math.random() - 0.5) * 2,
+            dy: (Math.random() - 0.5) * 2,
+        });
+    }
 }
 
 function animate() {
@@ -70,7 +38,52 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-animate();
+// Preloader and content management
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    const preloaderText = document.querySelector('.preloader-text');
+    const app = document.querySelector('#app');
+    
+    const loadingMessages = [
+        'Loading SnipX...',
+        'Preparing your workspace...',
+        'Almost there...',
+        'Getting things ready...'
+    ];
+    
+    let messageIndex = 0;
+    const loadingTime = 4500; // 4.5 seconds
+    const messageChangeInterval = loadingTime / loadingMessages.length;
+    
+    // Initialize particles immediately
+    initParticles();
+    animate();
+    
+    // Change messages periodically
+    const messageTimer = setInterval(() => {
+        messageIndex = (messageIndex + 1) % loadingMessages.length;
+        preloaderText.style.opacity = '0';
+        
+        setTimeout(() => {
+            preloaderText.textContent = loadingMessages[messageIndex];
+            preloaderText.style.opacity = '1';
+        }, 200);
+    }, messageChangeInterval);
+    
+    // Show content after loading time
+    setTimeout(() => {
+        clearInterval(messageTimer);
+        preloader.style.display = 'none';
+        canvas.classList.add('visible');
+        app.classList.add('visible');
+    }, loadingTime);
+});
+
+// Handle window resize for particles
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
 
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
