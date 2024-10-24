@@ -1,19 +1,22 @@
 const sign_in_btn = document.querySelector("#sign-in-btn");
 const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".login-container");
+
 sign_up_btn.addEventListener("click", () => {
   container.classList.add("sign-up-mode");
 });
+
 sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
+
 document.getElementById('signUpBtn').addEventListener('click', function(event) {
   event.preventDefault();
 
   const username = document.getElementById('username').value.trim();
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value.trim();
-  const confirmPassword = document.getElementById('confirmPassword').value.trim(); // New password confirmation field
+  const confirmPassword = document.getElementById('confirmPassword').value.trim();
 
   const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
@@ -42,7 +45,7 @@ document.getElementById('loginBtn').addEventListener('click', function(event) {
 
     if (rememberMe) {
       localStorage.setItem('rememberedUsername', loginUsername);
-      localStorage.setItem('rememberedPassword', loginPassword); // Password will also be remembered now
+      localStorage.setItem('rememberedPassword', loginPassword); 
     } else {
       sessionStorage.setItem('sessionUsername', loginUsername);
       sessionStorage.setItem('sessionPassword', loginPassword);
@@ -59,17 +62,18 @@ window.addEventListener('load', () => {
     document.getElementById('loginPassword').value = rememberedPassword;
     document.getElementById('rememberMe').checked = true;
   }
+
+
+  setIconState('#togglePassword', '#loginPassword');
+  setIconState('#toggleSignUpPassword', '#password');
+  setIconState('#toggleConfirmPassword', '#confirmPassword');
 });
 
 const togglePassword = document.querySelector('#togglePassword');
 const passwordInput = document.querySelector('#loginPassword');
 
 togglePassword.addEventListener('click', function() {
-  const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-  passwordInput.setAttribute('type', type);
-
-  this.classList.toggle('fa-eye');
-  this.classList.toggle('fa-eye-slash');
+  togglePasswordVisibility(passwordInput, this);
 });
 
 const toggleSignUpPassword = document.querySelector('#toggleSignUpPassword');
@@ -78,18 +82,37 @@ const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
 const confirmPasswordInput = document.querySelector('#confirmPassword');
 
 toggleSignUpPassword.addEventListener('click', function() {
-  const type = signUpPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-  signUpPasswordInput.setAttribute('type', type);
-
-  this.classList.toggle('fa-eye');
-  this.classList.toggle('fa-eye-slash');
+  togglePasswordVisibility(signUpPasswordInput, this);
 });
 
 toggleConfirmPassword.addEventListener('click', function() {
-
-  const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-  confirmPasswordInput.setAttribute('type', type);
-
-  this.classList.toggle('fa-eye');
-  this.classList.toggle('fa-eye-slash');
+  togglePasswordVisibility(confirmPasswordInput, this);
 });
+
+
+function togglePasswordVisibility(passwordField, toggleIcon) {
+  const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordField.setAttribute('type', type);
+
+  if (type === 'text') {
+    toggleIcon.classList.remove('fa-eye-slash');
+    toggleIcon.classList.add('fa-eye');
+  } else {
+    toggleIcon.classList.remove('fa-eye');
+    toggleIcon.classList.add('fa-eye-slash');
+  }
+}
+
+
+function setIconState(toggleIconSelector, passwordFieldSelector) {
+  const toggleIcon = document.querySelector(toggleIconSelector);
+  const passwordField = document.querySelector(passwordFieldSelector);
+
+  if (passwordField.getAttribute('type') === 'password') {
+    toggleIcon.classList.add('fa-eye-slash');
+    toggleIcon.classList.remove('fa-eye');
+  } else {
+    toggleIcon.classList.add('fa-eye');
+    toggleIcon.classList.remove('fa-eye-slash');
+  }
+}
