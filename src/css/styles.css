@@ -240,6 +240,12 @@ header p{
     box-shadow: 0 0 10px #a1ff14;
 }
 
+#subscriptionStatus {
+    margin-top: 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
 .faq-section {
     background: transparent;
     padding: 50px 20px;
@@ -352,7 +358,7 @@ footer a:hover {
 }
 
 body.dark-mode {
-    background: radial-gradient(circle, #121212, #000);
+    background: radial-gradient(circle, white , #000);
     color: #f8f9fa;
 }
 
