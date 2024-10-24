@@ -386,3 +386,10 @@ body.dark-mode footer {
 ::-webkit-scrollbar-thumb:hover {
     background: #8fcf13;
 }
+.navbar-brand {
+    font-size: 40px; 
+}
+
+.navbar-brand i {
+    margin-right: 8px; 
+}
