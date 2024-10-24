@@ -1,3 +1,49 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const preloader = document.querySelector('.preloader');
+    const preloaderText = document.querySelector('.preloader-text');
+    const body = document.body;
+    
+    const loadingMessages = [
+        'Loading SnipX...',
+        'Preparing your workspace...',
+        'Almost there...',
+        'Getting things ready...'
+    ];
+    
+    let messageIndex = 0;
+
+    // Random time between 2 and 3 seconds
+    const loadingTime = Math.random() * (3000 - 2000) + 2000;
+
+    // Calculate how often to change the message
+    const messageChangeTime = loadingTime / loadingMessages.length;
+    
+    // Change loading message at intervals proportional to the loading time
+    const messageInterval = setInterval(() => {
+        messageIndex = (messageIndex + 1) % loadingMessages.length;
+        preloaderText.style.opacity = '0';
+        
+        setTimeout(() => {
+            preloaderText.textContent = loadingMessages[messageIndex];
+            preloaderText.style.opacity = '1';
+        }, 1000);
+    }, messageChangeTime);
+
+    // Hide preloader and show content after the loading time
+    setTimeout(() => {
+        clearInterval(messageInterval);
+        preloader.classList.add('preloader-hidden');
+        body.classList.remove('content-hidden');
+        body.classList.add('content-visible');
+        
+        // Remove preloader from DOM after animation
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 5000);
+    }, loadingTime);
+});
+
+
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 const particles = [];
