@@ -63,15 +63,17 @@
     opacity: 1;
 }
 
-/* Hide initial content */
+/* Content styling */
 #app {
-    display: none;
     position: relative;
     z-index: 2;
+    opacity: 0;
+    display: none;
 }
 
 /* Show content when loaded */
 #app.visible {
+    opacity: 1;
     display: block;
     animation: fadeIn 0.5s ease-in;
 }

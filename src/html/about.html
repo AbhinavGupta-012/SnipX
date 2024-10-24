@@ -11,94 +11,98 @@
             <link href = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel = "stylesheet">
         </head>
         <body>
-            <nav class = "navbar navbar-expand-lg navbar-dark">
-                <div class = "container">
-                    <a class = "navbar-brand" href = "#">
-                        <i class = "bi bi-code-square text-success"></i> SnipX
-                    </a>
-                    <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navbarNav" aria-controls = "navbarNav" aria-expanded = "false" aria-label = "Toggle navigation">
-                        <span class = "navbar-toggler-icon"></span>
-                    </button>
-                    <div class = "collapse navbar-collapse" id = "navbarNav">
-                        <ul class = "navbar-nav ms-auto">
-                            <li class = "nav-item">
-                                <a class = "nav-link" href = "index.html"> Home </a>
-                            </li>
-                            <li class = "nav-item">
-                                <a class = "nav-link" href = "explore.html"> Explore </a>
-                            </li>
-                            <li class = "nav-item">
-                                <a class = "nav-link" href = "my-snippets.html"> My Snippets </a>
-                            </li>
-                            <li class = "nav-item">
-                                <a class = "nav-link" href = "about.html"> About </a>
-                            </li>
-                        </ul>
-                        <button id = "darkModeToggle" class = "dark-mode-btn">
-                            <i class = "fas fa-moon"></i>
-                        </button>
-                    </div>
-                </div>
-            </nav>
             <canvas id = "particles"></canvas>
-            <header>
-                <h1> About SnipX </h1>
-                <p> Empowering developers to organize, share, and access their code snippets efficiently. </p>
-            </header>
-            <section class = "container py-5">
-                <h2> Our Mission </h2>
-                <p>
-                    At SnipX, we are dedicated to simplifying the way developers handle their code snippets. In a fast-paced tech world, keeping track of reusable code is essential, and we strive to make that easier for you. Our platform offers a seamless experience for organizing, sharing, and quickly accessing your most valuable snippets—whether for personal use or team collaboration.
-                </p>
-
-                <h2> Why SnipX? </h2>
-                <p>
-                    SnipX is built by developers for developers. We understand the pain of losing valuable pieces of code in endless files and folders. That's why we've designed SnipX to be intuitive, fast, and flexible. With a focus on user experience, SnipX is your go-to tool to ensure that your code is always a click away.
-                </p>
-
-                <h2> Our Vision </h2>
-                <p>
-                    Our goal is to create a community where developers can not only store and manage their snippets but also collaborate, learn, and grow together. We envision a future where SnipX becomes the ultimate hub for all your coding needs.
-                </p>
-            </section>
-
-            <footer class = "bg-dark text-light py-4">
-                <div class = "container">
-                    <div class = "row">
-                        <div class = "col-md-4">
-                            <h5> SnipX </h5>
-                            <p> Your go-to platform for managing code snippets. </p>
-                        </div>
-                        <div class = "col-md-4">
-                            <h5> Quick Links </h5>
-                            <ul class = "list-unstyled">
-                                <li> <a href = "index.html"> Home </a> </li>
-                                <li> <a href = "explore.html"> Explore </a> </li>
-                                <li> <a href = "snippet.html"> My Snippets </a> </li>
-                                <li> <a href = "about.html"> About Us </a> </li>
+            <div id="app">
+                <nav class = "navbar navbar-expand-lg navbar-dark">
+                    <div class = "container">
+                        <a class = "navbar-brand" href = "#">
+                            <i class = "bi bi-code-square text-success"></i> SnipX
+                        </a>
+                        <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navbarNav" aria-controls = "navbarNav" aria-expanded = "false" aria-label = "Toggle navigation">
+                            <span class = "navbar-toggler-icon"></span>
+                        </button>
+                        <div class = "collapse navbar-collapse" id = "navbarNav">
+                            <ul class = "navbar-nav ms-auto">
+                                <li class = "nav-item">
+                                    <a class = "nav-link" href = "index.html"> Home </a>
+                                </li>
+                                <li class = "nav-item">
+                                    <a class = "nav-link" href = "explore.html"> Explore </a>
+                                </li>
+                                <li class = "nav-item">
+                                    <a class = "nav-link" href = "my-snippets.html"> My Snippets </a>
+                                </li>
+                                <li class = "nav-item">
+                                    <a class = "nav-link" href = "about.html"> About </a>
+                                </li>
                             </ul>
+                            <button id = "darkModeToggle" class = "dark-mode-btn">
+                                <i class = "fas fa-moon"></i>
+                            </button>
                         </div>
-                        <div class = "col-md-4">
-                            <h5> Connect </h5>
-                            <div class = "social-icons">
-                                <a href = "#"> <i class = "fab fa-twitter"> </i> </a>
-                                <a href = "https://github.com/AbhinavGupta-012/SnipX"> <i class = "fab fa-github"> </i> </a>
-                                <a href = "#"> <i class = "fab fa-linkedin"> </i> </a>
+                    </div>
+                </nav>
+                
+                <header>
+                    <h1> About SnipX </h1>
+                    <p> Empowering developers to organize, share, and access their code snippets efficiently. </p>
+                </header>
+                <section class = "container py-5">
+                    <h2> Our Mission </h2>
+                    <p>
+                        At SnipX, we are dedicated to simplifying the way developers handle their code snippets. In a fast-paced tech world, keeping track of reusable code is essential, and we strive to make that easier for you. Our platform offers a seamless experience for organizing, sharing, and quickly accessing your most valuable snippets—whether for personal use or team collaboration.
+                    </p>
+
+                    <h2> Why SnipX? </h2>
+                    <p>
+                        SnipX is built by developers for developers. We understand the pain of losing valuable pieces of code in endless files and folders. That's why we've designed SnipX to be intuitive, fast, and flexible. With a focus on user experience, SnipX is your go-to tool to ensure that your code is always a click away.
+                    </p>
+
+                    <h2> Our Vision </h2>
+                    <p>
+                        Our goal is to create a community where developers can not only store and manage their snippets but also collaborate, learn, and grow together. We envision a future where SnipX becomes the ultimate hub for all your coding needs.
+                    </p>
+                </section>
+
+                <footer class = "bg-dark text-light py-4">
+                    <div class = "container">
+                        <div class = "row">
+                            <div class = "col-md-4">
+                                <h5> SnipX </h5>
+                                <p> Your go-to platform for managing code snippets. </p>
+                            </div>
+                            <div class = "col-md-4">
+                                <h5> Quick Links </h5>
+                                <ul class = "list-unstyled">
+                                    <li> <a href = "index.html"> Home </a> </li>
+                                    <li> <a href = "explore.html"> Explore </a> </li>
+                                    <li> <a href = "snippet.html"> My Snippets </a> </li>
+                                    <li> <a href = "about.html"> About Us </a> </li>
+                                </ul>
+                            </div>
+                            <div class = "col-md-4">
+                                <h5> Connect </h5>
+                                <div class = "social-icons">
+                                    <a href = "#"> <i class = "fab fa-twitter"> </i> </a>
+                                    <a href = "https://github.com/AbhinavGupta-012/SnipX"> <i class = "fab fa-github"> </i> </a>
+                                    <a href = "#"> <i class = "fab fa-linkedin"> </i> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class = "row">
+                            <div class = "col-md-6">
+                                <p> &copy; 2024 SnipX. All rights reserved. </p>
+                            </div>
+                            <div class = "col-md-6 text-md-end">
+                                <a href = "#"> Privacy Policy </a> | <a href = "#"> Terms of Service </a>
                             </div>
                         </div>
                     </div>
-                    <hr>
-                    <div class = "row">
-                        <div class = "col-md-6">
-                            <p> &copy; 2024 SnipX. All rights reserved. </p>
-                        </div>
-                        <div class = "col-md-6 text-md-end">
-                            <a href = "#"> Privacy Policy </a> | <a href = "#"> Terms of Service </a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+                </footer>
+            </div>
 
             <script src = "../js/main.js"></script>
+            <script src = "../js/layout.js"></script>
         </body>
     </html>

@@ -12,110 +12,113 @@
             <link rel = "stylesheet" href = "../css/explore.css">
         </head>
         <body>
-            <nav class = "navbar navbar-expand-lg navbar-dark">
-                <div class = "container">
-                    <a class = "navbar-brand" href = "#">
-                        <i class = "bi bi-code-square text-success"></i> SnipX
-                    </a>
-                    <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navbarNav" aria-controls = "navbarNav" aria-expanded = "false" aria-label = "Toggle navigation">
-                        <span class = "navbar-toggler-icon"></span>
-                    </button>
-                    <div class = "collapse navbar-collapse" id = "navbarNav">
-                        <ul class = "navbar-nav ms-auto">
-                            <li class = "nav-item">
-                                <a class = "nav-link" href = "index.html"> Home </a>
-                            </li>
-                            <li class = "nav-item">
-                                <a class = "nav-link" href = "explore.html"> Explore </a>
-                            </li>
-                            <li class = "nav-item">
-                                <a class = "nav-link" href = "my-snippets.html"> My Snippets </a>
-                            </li>
-                            <li class = "nav-item">
-                                <a class = "nav-link" href = "about.html"> About </a>
-                            </li>
-                        </ul>
-                        <button id = "darkModeToggle" class = "dark-mode-btn">
-                            <i class = "fas fa-moon"></i>
-                        </button>
-                    </div>
-                </div>
-            </nav>
             <canvas id = "particles"></canvas>
-            <header class = "py-5">
-                <div class = "container text-center">
-                    <h1 class = "display-4 mb-3"> Explore Snippets </h1>
-                    <p class = "lead mb-4"> Discover and learn from a variety of code snippets </p>
-                </div>
-            </header>
-
-            <main>
-                <section id = "explore" class = "py-5">
+            <div id="app">
+                <nav class = "navbar navbar-expand-lg navbar-dark">
                     <div class = "container">
-                        <div id = "search-container" class = "mb-4">
-                            <input type = "text" id = "search-input" class = "form-control" placeholder = "Search snippets...">
-                        </div>
-                        <div class = "row" id = "snippetContainer">
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <div class = "modal fade" id = "snippetModal" tabindex = "-1" aria-labelledby = "snippetModalLabel" aria-hidden = "true">
-                <div class = "modal-dialog modal-lg">
-                    <div class = "modal-content">
-                        <div class = "modal-header">
-                            <h5 class = "modal-title" id = "snippetModalLabel"> Snippet Preview </h5>
-                            <button type = "button" class = "btn-close" data-bs-dismiss = "modal" aria-label = "Close"></button>
-                        </div>
-                        <div class = "modal-body">
-                            <pre><code id = "snippetCode"></code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <footer class = "bg-dark text-light py-4">
-                <div class = "container">
-                    <div class = "row">
-                        <div class = "col-md-4">
-                            <h5> SnipX </h5>
-                        <p> Your go-to platform for managing code snippets. </p>
-                        </div>
-                        <div class = "col-md-4">
-                            <h5> Quick Links </h5>
-                            <ul class = "list-unstyled">
-                                <li> <a href = "index.html"> Home </a> </li>
-                                <li> <a href = "explore.html"> Explore </a> </li>
-                                <li> <a href = "snippet.html"> My Snippets </a> </li>
-                                <li> <a href = "about.html"> About Us </a> </li>
+                        <a class = "navbar-brand" href = "#">
+                            <i class = "bi bi-code-square text-success"></i> SnipX
+                        </a>
+                        <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navbarNav" aria-controls = "navbarNav" aria-expanded = "false" aria-label = "Toggle navigation">
+                            <span class = "navbar-toggler-icon"></span>
+                        </button>
+                        <div class = "collapse navbar-collapse" id = "navbarNav">
+                            <ul class = "navbar-nav ms-auto">
+                                <li class = "nav-item">
+                                    <a class = "nav-link" href = "index.html"> Home </a>
+                                </li>
+                                <li class = "nav-item">
+                                    <a class = "nav-link" href = "explore.html"> Explore </a>
+                                </li>
+                                <li class = "nav-item">
+                                    <a class = "nav-link" href = "my-snippets.html"> My Snippets </a>
+                                </li>
+                                <li class = "nav-item">
+                                    <a class = "nav-link" href = "about.html"> About </a>
+                                </li>
                             </ul>
+                            <button id = "darkModeToggle" class = "dark-mode-btn">
+                                <i class = "fas fa-moon"></i>
+                            </button>
                         </div>
-                        <div class = "col-md-4">
-                            <h5> Connect </h5>
-                            <div class = "social-icons">
-                                <a href = "#"> <i class = "fab fa-twitter"> </i> </a>
-                                <a href = "https://github.com/AbhinavGupta-012/SnipX"> <i class = "fab fa-github"> </i> </a>
-                                <a href = "#"> <i class = "fab fa-linkedin"> </i> </a>
+                    </div>
+                </nav>
+                <header class = "py-5">
+                    <div class = "container text-center">
+                        <h1 class = "display-4 mb-3"> Explore Snippets </h1>
+                        <p class = "lead mb-4"> Discover and learn from a variety of code snippets </p>
+                    </div>
+                </header>
+
+                <main>
+                    <section id = "explore" class = "py-5">
+                        <div class = "container">
+                            <div id = "search-container" class = "mb-4">
+                                <input type = "text" id = "search-input" class = "form-control" placeholder = "Search snippets...">
+                            </div>
+                            <div class = "row" id = "snippetContainer">
+                            </div>
+                        </div>
+                    </section>
+                </main>
+
+                <div class = "modal fade" id = "snippetModal" tabindex = "-1" aria-labelledby = "snippetModalLabel" aria-hidden = "true">
+                    <div class = "modal-dialog modal-lg">
+                        <div class = "modal-content">
+                            <div class = "modal-header">
+                                <h5 class = "modal-title" id = "snippetModalLabel"> Snippet Preview </h5>
+                                <button type = "button" class = "btn-close" data-bs-dismiss = "modal" aria-label = "Close"></button>
+                            </div>
+                            <div class = "modal-body">
+                                <pre><code id = "snippetCode"></code></pre>
                             </div>
                         </div>
                     </div>
-                    <hr>
-                    <div class = "row">
-                        <div class = "col-md-6">
-                            <p> &copy; 2024 SnipX. All rights reserved. </p>
+                </div>
+
+                <footer class = "bg-dark text-light py-4">
+                    <div class = "container">
+                        <div class = "row">
+                            <div class = "col-md-4">
+                                <h5> SnipX </h5>
+                            <p> Your go-to platform for managing code snippets. </p>
+                            </div>
+                            <div class = "col-md-4">
+                                <h5> Quick Links </h5>
+                                <ul class = "list-unstyled">
+                                    <li> <a href = "index.html"> Home </a> </li>
+                                    <li> <a href = "explore.html"> Explore </a> </li>
+                                    <li> <a href = "snippet.html"> My Snippets </a> </li>
+                                    <li> <a href = "about.html"> About Us </a> </li>
+                                </ul>
+                            </div>
+                            <div class = "col-md-4">
+                                <h5> Connect </h5>
+                                <div class = "social-icons">
+                                    <a href = "#"> <i class = "fab fa-twitter"> </i> </a>
+                                    <a href = "https://github.com/AbhinavGupta-012/SnipX"> <i class = "fab fa-github"> </i> </a>
+                                    <a href = "#"> <i class = "fab fa-linkedin"> </i> </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class = "col-md-6 text-md-end">
-                            <a href = "#"> Privacy Policy </a> | <a href = "#"> Terms of Service </a>
+                        <hr>
+                        <div class = "row">
+                            <div class = "col-md-6">
+                                <p> &copy; 2024 SnipX. All rights reserved. </p>
+                            </div>
+                            <div class = "col-md-6 text-md-end">
+                                <a href = "#"> Privacy Policy </a> | <a href = "#"> Terms of Service </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </footer>
+                </footer>
+            </div>
 
 
             <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
             <script src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
             <script src = "../js/explore.js"></script>
             <script src = "../js/main.js"></script>
+            <script src = "../js/layout.js"></script>
         </body>
     </html>
