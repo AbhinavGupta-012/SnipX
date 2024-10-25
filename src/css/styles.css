@@ -46,7 +46,6 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Canvas styling */
 #particles {
     position: fixed;
     top: 0;
@@ -63,7 +62,6 @@
     opacity: 1;
 }
 
-/* Content styling */
 #app {
     position: relative;
     z-index: 2;
@@ -71,7 +69,6 @@
     display: none;
 }
 
-/* Show content when loaded */
 #app.visible {
     opacity: 1;
     display: block;
@@ -417,4 +414,79 @@ body.dark-mode footer {
 
 .navbar-brand i {
     margin-right: 8px; 
+}
+
+.hamburger {
+    cursor: pointer;
+}
+  
+.hamburger input {
+    display: none;
+}
+  
+.hamburger svg {
+    height: 3em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+  
+.line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+  
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+  
+.hamburger input:checked + svg {
+    transform: rotate(-45deg);
+}
+  
+.hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        right: 0;
+        background: rgba(18, 18, 18, 0.95);
+        padding: 1rem;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .navbar-collapse.show {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 1000;
+    }
+
+    .navbar-nav {
+        margin-bottom: 1rem;
+    }
+
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (min-width: 992px) {
+        .hamburger {
+        display: none;
+    }
 }
