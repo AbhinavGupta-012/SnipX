@@ -1,13 +1,10 @@
-// Shared layout functionality
 function initializeLayout() {
-    // Create and insert canvas if it doesn't exist
     if (!document.getElementById('particles')) {
         const canvas = document.createElement('canvas');
         canvas.id = 'particles';
         document.body.insertBefore(canvas, document.body.firstChild);
     }
 
-    // Particle system setup
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     const particles = [];
@@ -47,19 +44,15 @@ function initializeLayout() {
         requestAnimationFrame(animate);
     }
 
-    // Initialize particles
     initParticles();
     animate();
 
-    // Handle window resize
     window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
 
-    // Make canvas visible
     canvas.classList.add('visible');
 }
 
-// Export for use in other files
 window.initializeLayout = initializeLayout;
