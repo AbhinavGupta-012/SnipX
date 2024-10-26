@@ -272,3 +272,7 @@ input:checked + .slider:before {
         transform: translateX(20px);
     }
 }
+.view-btn, .share-btn, .edit-btn, .delete-btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
